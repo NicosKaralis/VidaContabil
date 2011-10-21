@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = [:remember_me, :session_timeout, :reset_password, :activity_logging]
+Rails.application.config.sorcery.submodules = [:remember_me, :session_timeout, :reset_password, :activity_logging, :user_activation]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -103,21 +103,21 @@ Rails.application.config.sorcery.configure do |config|
 																																											# Useful for ActiveRecord's STI.
 
 		# -- user_activation --
-		# user.activation_state_attribute_name = :activation_state												# the attribute name to hold
+    user.activation_state_attribute_name = :activation_state                          # the attribute name to hold
 																																											# activation state
 																																											# (active/pending).
 
-		# user.activation_token_attribute_name = :activation_token												# the attribute name to hold
+    user.activation_token_attribute_name = :activation_token                          # the attribute name to hold
 																																											# activation code (sent by email).
 
-		# user.activation_token_expires_at_attribute_name = :activation_token_expires_at	# the attribute name to hold
+    user.activation_token_expires_at_attribute_name = :activation_token_expires_at   # the attribute name to hold
 																																											# activation code expiration date.
 
-		# user.activation_token_expiration_period =	 nil																	# how many seconds before the
+    user.activation_token_expiration_period = 24.hours                                # how many seconds before the
 																																											# activation code expires. nil for
 																																											# never expires.
 
-		# user.user_activation_mailer = nil																								# your mailer class. Required.
+    user.user_activation_mailer = UserMailer                                          # your mailer class. Required.
 
 		# user.activation_needed_email_method_name = :activation_needed_email							# activation needed email method
 																																											# on your mailer class.
@@ -125,7 +125,7 @@ Rails.application.config.sorcery.configure do |config|
 		# user.activation_success_email_method_name = :activation_success_email						# activation success email method
 																																											# on your mailer class.
 
-		# user.prevent_non_active_users_to_login = true																		# do you want to prevent or allow
+    user.prevent_non_active_users_to_login = true                                     # do you want to prevent or allow
 																																											# users that did not activate by
 																																											# email to login?
 
@@ -171,10 +171,10 @@ Rails.application.config.sorcery.configure do |config|
 																																											# permanent.
 
 		# -- activity logging --
-		# user.last_login_at_attribute_name = :last_login_at															# last login attribute name.
-		# user.last_logout_at_attribute_name = :last_logout_at														# last logout attribute name.
-		# user.last_activity_at_attribute_name = :last_activity_at												# last activity attribute name.
-		# user.activity_timeout = 10 * 60																									# how long since last activity is
+    user.last_login_at_attribute_name = :last_login_at                                # last login attribute name.
+    user.last_logout_at_attribute_name = :last_logout_at                              # last logout attribute name.
+    user.last_activity_at_attribute_name = :last_activity_at                          # last activity attribute name.
+    # user.activity_timeout = 10 * 60                                                 # how long since last activity is
 																																											# the user defined logged out?
 
 		# -- external --

@@ -15,7 +15,7 @@ gem 'json'
 gem 'therubyracer'
 
 gem 'sorcery'
-# gem 'tlsmail' # ainda nao ativado
+gem 'tlsmail' # ainda nao ativado
 
 # Gems used only for assets and not required
 # in production environments by default.
