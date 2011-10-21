@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_filter :require_login, :only => :home
+  before_filter :require_login, :only => [:secret]
   
   def home
     # flash.now[:success] = "This is an success!"

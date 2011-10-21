@@ -14,6 +14,11 @@ end
 gem 'json'
 gem 'therubyracer'
 
+# Admin login
+gem 'activeadmin'
+gem "meta_search", '>= 1.1.0.pre'
+
+# Users login
 gem 'sorcery'
 gem 'tlsmail' # ainda nao ativado
 
