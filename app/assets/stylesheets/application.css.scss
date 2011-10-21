@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+ *= require flash
+*/
+
+html, body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+a {
+  color: #0000FF;
+	img {
+	  border: none;
+	}
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#container {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+}
+form label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+form .field, form .actions {
+  margin: 12px 0;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+
+ 	h2 {
+		text-align: left;
+		font-weight: bold;
+		padding: 5px 10px;
+		font-size: 12px;
+		margin: 0;
+		background-color: #c00;
+		color: #fff;
+	}
+
+	p {
+		margin: 8px 10px;
+	}
+
+	ul {
+		margin: 15px 0;
+	}
+}
+#user_nav {
+  margin: 15px 0;
+}
+
+input[type=checkbox] {
+  float: left;
+  margin-right: 8px;
+}
