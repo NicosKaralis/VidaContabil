@@ -1,9 +1,9 @@
 Welcome to example.com, <%= @user.username %>
 ===============================================
      
-You have successfully signed up to example.com,
+You have successfully signed up to <%= root_url %>,
 your username is: <%= @user.username %>.
     
-To login to the site, just follow this link: <%= @url %>.
+To login to the site, just follow this link: <%= activate_user_url(@user.activation_token) %>.
      
 Thanks for joining and have a great day!
